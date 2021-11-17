@@ -9,9 +9,6 @@ import android.view.ViewGroup
 
 class EditorFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = EditorFragment()
-    }
 
     private lateinit var viewModel: EditorViewModel
 
@@ -19,13 +16,13 @@ class EditorFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        //uses the editor fragment layout file
         return inflater.inflate(R.layout.editor_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(EditorViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
 }
