@@ -13,10 +13,17 @@
         <action
             android:id="@+id/action_edit_note"
             app:destination="@id/editorFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_editorFragment2"
+            app:destination="@id/editorFragment" />
     </fragment>
     <fragment
         android:id="@+id/editorFragment"
         android:name="com.example.ca1.EditorFragment"
         android:label="editor_fragment"
-        tools:layout="@layout/editor_fragment" />
+        tools:layout="@layout/editor_fragment" >
+        <argument
+            android:name="anime"
+            app:argType="com.example.ca1.data.AnimeEntity" />
+    </fragment>
 </navigation>

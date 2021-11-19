@@ -6,9 +6,9 @@ import com.example.ca1.data.AnimeEntity
 import com.example.ca1.data.sampleData
 
 class MainViewModel : ViewModel() {
-    val notesList = MutableLiveData<List<AnimeEntity>>()
+    val animeList = MutableLiveData<List<AnimeEntity>>()
 
     init{
-        notesList.value = sampleData.getAnime()
+        animeList.value = sampleData.getAnime()
     }
 }

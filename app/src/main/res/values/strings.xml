@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Ca.1</string>
     <string name="enter_anime">Enter Anime</string>
+    <string name="enter_anime_title">Enter Anime Title</string>
+    <string name="enter_anime_description">Enter Anime Description</string>
 </resources>

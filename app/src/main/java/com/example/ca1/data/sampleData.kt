@@ -1,5 +1,4 @@
 package com.example.ca1.data
-import java.util.*
 
 class sampleData {
     companion object {

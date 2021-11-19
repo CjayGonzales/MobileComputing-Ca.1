@@ -7,7 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.ca1.data.AnimeEntity
 import com.example.ca1.databinding.ListItemBinding
 
-class AnimeListAdapter(private val animeList: List<AnimeEntity>) :
+class AnimeListAdapter(private val animeList: List<AnimeEntity>,
+        private val listener: ListItemListener) :
     RecyclerView.Adapter<AnimeListAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) :
@@ -25,9 +26,16 @@ class AnimeListAdapter(private val animeList: List<AnimeEntity>) :
         val anime = animeList[position]
         with(holder.binding){
             animeText.text = anime.titles
+            root.setOnClickListener{
+                listener.onItemClick(anime)
+            }
         }
     }
 
     override fun getItemCount() = animeList.size
+
+    interface ListItemListener{
+        fun onItemClick(anime: AnimeEntity)
+    }
 
 }
