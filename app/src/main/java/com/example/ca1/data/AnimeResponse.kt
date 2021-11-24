@@ -2,10 +2,9 @@ package com.example.ca1.data
 
 import android.os.Parcel
 import android.os.Parcelable
-import com.example.ca1.NEW_ANIME_ID
 
 ///////// this is for sample data /////////////////
-
+/*
 data class AnimeEntity(
         val id: Int,
         val titles: String?, //array
@@ -76,31 +75,34 @@ data class AnimeEntity(
         }
 
 }
-
-//////// this is for data being called from API //////////////
-/*
-data class AnimeEntity(
-        val data: List<Documents>
-)
-
-class Documents(
-        val titles: Titles,
-        val description: Description,
-        val seasonYear: Int,
-        val episodeCount: Int,
-        val episodeDuration: Int,
-        val trailerUrl: String,
-        val coverImage: String,
-        val score: Int
-)
-
-class Titles(
-        val enTitle: String,
-        val jpTitle: String
-)
-
-class Description(
-        val enDescription: String
-)
-
 */
+//////// this is for data being called from API //////////////
+
+data class AnimeResponse(
+        val data: List<Animation>
+)
+
+//        : Parcelable {
+//        constructor(parcel: Parcel) : this(
+//            parcel.readTypedObject(Animation)
+
+
+
+//    override fun writeToParcel(parcel: Parcel, flags: Int) {
+//
+//    }
+//
+//    override fun describeContents(): Int {
+//        return 0
+//    }
+//
+//    companion object CREATOR : Parcelable.Creator<AnimeResponse> {
+//        override fun createFromParcel(parcel: Parcel): AnimeResponse {
+//            return AnimeResponse(parcel)
+//        }
+//
+//        override fun newArray(size: Int): Array<AnimeResponse?> {
+//            return arrayOfNulls(size)
+//        }
+//    }
+//}

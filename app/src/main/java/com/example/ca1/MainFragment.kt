@@ -12,7 +12,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.ca1.data.AnimeEntity
+import com.example.ca1.data.Animation
+import com.example.ca1.data.AnimeResponse
 
 import com.example.ca1.databinding.MainFragmentBinding
 
@@ -34,8 +35,10 @@ class MainFragment : Fragment(),
 
 
         binding = MainFragmentBinding.inflate(inflater, container, false)
+
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
+        viewModel.getPosts()
         //references the object multiple times
         with(binding.recyclerView){
             setHasFixedSize(true)
@@ -50,7 +53,7 @@ class MainFragment : Fragment(),
         viewModel.animeList.observe(viewLifecycleOwner, Observer{
             //Log.i("note Logging", it.toString())
 
-            adapter = AnimeListAdapter(it, this@MainFragment)
+            adapter = AnimeListAdapter(it.data, this@MainFragment)
             binding.recyclerView.adapter = adapter
             binding.recyclerView.layoutManager = LinearLayoutManager(activity)
         })
@@ -58,10 +61,10 @@ class MainFragment : Fragment(),
         return binding.root
     }
 
-    override fun onItemClick(anime: AnimeEntity){
-        Log.i(TAG, "onItemClick : Received Anime name ${anime.titles}")
-        val action = MainFragmentDirections.actionMainFragmentToEditorFragment2(anime)
-        findNavController().navigate(action)
+    override fun onItemClick(anime: Animation){
+//        Log.i(TAG, "onItemClick : Received Anime name ${anime.titles}")
+//        val action = MainFragmentDirections.actionMainFragmentToEditorFragment2(anime)
+//        findNavController().navigate(action)
     }
 
 }

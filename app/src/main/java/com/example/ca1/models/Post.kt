@@ -11,6 +11,4 @@ data class Post(val id: Int,
                 val episodeDuration: Int,
                 val trailerUrl: String?,
                 val genres: String?,
-                val score: Int) {
-
-}
+                val score: Int)

@@ -4,11 +4,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.ca1.data.AnimeEntity
+import com.example.ca1.data.Animation
+import com.example.ca1.data.AnimeResponse
 import com.example.ca1.databinding.ListItemBinding
 
-class AnimeListAdapter(private val animeList: List<AnimeEntity>,
-        private val listener: ListItemListener) :
+class AnimeListAdapter(private val animeList: List<Animation>,
+                       private val listener: ListItemListener) :
     RecyclerView.Adapter<AnimeListAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) :
@@ -25,7 +26,7 @@ class AnimeListAdapter(private val animeList: List<AnimeEntity>,
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val anime = animeList[position]
         with(holder.binding){
-            animeText.text = anime.titles
+            animeText.text = anime.titles.enTitle
             root.setOnClickListener{
                 listener.onItemClick(anime)
             }
@@ -35,7 +36,7 @@ class AnimeListAdapter(private val animeList: List<AnimeEntity>,
     override fun getItemCount() = animeList.size
 
     interface ListItemListener{
-        fun onItemClick(anime: AnimeEntity)
+        fun onItemClick(anime: Animation)
     }
 
 }
