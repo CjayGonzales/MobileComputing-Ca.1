@@ -38,7 +38,7 @@ class MainFragment : Fragment(),
 
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
-        viewModel.getPosts()
+        //viewModel.getPosts()
         //references the object multiple times
         with(binding.recyclerView){
             setHasFixedSize(true)
@@ -51,9 +51,9 @@ class MainFragment : Fragment(),
         }
 
         viewModel.animeList.observe(viewLifecycleOwner, Observer{
-            //Log.i("note Logging", it.toString())
+            Log.i("note Logging", it.toString())
 
-            adapter = AnimeListAdapter(it.data, this@MainFragment)
+            adapter = AnimeListAdapter(it, this@MainFragment)
             binding.recyclerView.adapter = adapter
             binding.recyclerView.layoutManager = LinearLayoutManager(activity)
         })

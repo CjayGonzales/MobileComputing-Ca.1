@@ -23,6 +23,8 @@ class AnimeListAdapter(private val animeList: List<Animation>,
         return ViewHolder(view)
     }
 
+    override fun getItemCount() = animeList.size
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val anime = animeList[position]
         with(holder.binding){
@@ -32,8 +34,6 @@ class AnimeListAdapter(private val animeList: List<Animation>,
             }
         }
     }
-
-    override fun getItemCount() = animeList.size
 
     interface ListItemListener{
         fun onItemClick(anime: Animation)

@@ -10,7 +10,7 @@ import com.example.ca1.models.Post
 
 class MainActivity : AppCompatActivity() {
 //    private lateinit var viewModel: MainViewModel
-//    private lateinit var binding: ActivityMainBinding
+      private lateinit var binding: ActivityMainBinding
 //    private lateinit var animeListAdapter: AnimeListAdapter
 //    private val animePosts = mutableListOf<Post>()
 

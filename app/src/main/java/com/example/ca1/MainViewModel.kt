@@ -20,27 +20,29 @@ class MainViewModel : ViewModel() {
 //    get() = _isLoading
 //
 //
-//    init{
-//        getPosts()
-//    }
 
 
-    private val _animeList: MutableLiveData<List<AnimeResponse>> = MutableLiveData()
-    val animeList = MutableLiveData<AnimeResponse>()
 
-    private val _isLoading = MutableLiveData(false)
-    val isLoading: LiveData<Boolean>
-    get() = _isLoading
+    //private val _animeList: MutableLiveData<List<AnimeResponse>> = MutableLiveData()
+    var animeList: MutableLiveData<List<Animation>> = MutableLiveData()
+
+    init{
+        getPosts()
+    }
+
+//    private val _isLoading = MutableLiveData(false)
+//    val isLoading: LiveData<Boolean>
+//    get() = _isLoading
 
     fun getPosts(){
         //everything is now running in a coroutine block
         viewModelScope.launch {
-            _isLoading.value = true
+            //_isLoading.value = true
             val fetchedPosts = RetrofitInstance.api.getPosts()
-            Log.i("MainViewModel", "fetched posts   :  $fetchedPosts")
-            _animeList.value = listOf(fetchedPosts)
-            animeList.value = fetchedPosts
-            _isLoading.value = false
+            Log.i("MainViewModel", "fetched posts   :  ${fetchedPosts.data.documents[2].trailer_url}")
+            //_animeList.value = listOf(fetchedPosts)
+            animeList = MutableLiveData(fetchedPosts.data.documents)
+            //_isLoading.value = false
         }
     }
 }

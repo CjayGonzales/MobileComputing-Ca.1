@@ -79,8 +79,9 @@ data class AnimeEntity(
 //////// this is for data being called from API //////////////
 
 data class AnimeResponse(
-        val data: List<Animation>
+        val data: Data
 )
+//        TODO make this parcelable
 
 //        : Parcelable {
 //        constructor(parcel: Parcel) : this(
