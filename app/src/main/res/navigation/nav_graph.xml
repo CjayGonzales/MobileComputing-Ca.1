@@ -6,20 +6,21 @@
     app:startDestination="@id/mainFragment">
 
     <fragment
+        android:id="@+id/editorFragment"
+        android:name="com.example.ca1.EditorFragment"
+        android:label="editor_fragment"
+        tools:layout="@layout/editor_fragment" >
+        <argument
+            android:name="anime"
+            app:argType="com.example.ca1.data.AnimeResponse"/>
+    </fragment>
+    <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.ca1.MainFragment"
-        android:label="main_fragment"
-        tools:layout="@layout/main_fragment" >
-        <action
-            android:id="@+id/action_edit_note"
-            app:destination="@id/editorFragment" />
+        android:label="MainFragment" >
         <action
             android:id="@+id/action_mainFragment_to_editorFragment2"
             app:destination="@id/editorFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/editorFragment"
-        android:name="com.example.ca1.EditorFragment"
-        android:label="editor_fragment"
-        tools:layout="@layout/editor_fragment" />
+
 </navigation>

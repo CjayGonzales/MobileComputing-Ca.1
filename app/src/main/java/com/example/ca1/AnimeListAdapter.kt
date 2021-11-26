@@ -12,6 +12,8 @@ class AnimeListAdapter(private val animeList: List<Animation>,
                        private val listener: ListItemListener) :
     RecyclerView.Adapter<AnimeListAdapter.ViewHolder>() {
 
+        val selectedAnime = arrayListOf<AnimeResponse>()
+
     inner class ViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView){
             val binding = ListItemBinding.bind(itemView)
@@ -34,7 +36,7 @@ class AnimeListAdapter(private val animeList: List<Animation>,
             }
         }
     }
-
+//
     interface ListItemListener{
         fun onItemClick(anime: Animation)
     }

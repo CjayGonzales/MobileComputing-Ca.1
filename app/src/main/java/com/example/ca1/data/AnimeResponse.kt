@@ -81,11 +81,9 @@ data class AnimeEntity(
 data class AnimeResponse(
         val data: Data
 )
-//        TODO make this parcelable
-
-//        : Parcelable {
+//) : Parcelable {
 //        constructor(parcel: Parcel) : this(
-//            parcel.readTypedObject(Animation)
+//            parcel.readTypedObject()
 
 
 
