@@ -39,9 +39,9 @@ class MainViewModel : ViewModel() {
         viewModelScope.launch {
             //_isLoading.value = true
             val fetchedPosts = RetrofitInstance.api.getPosts()
-            Log.i("MainViewModel", "fetched posts   :  ${fetchedPosts.data.documents[2].trailer_url}")
+            Log.i("MainViewModel", "fetched posts   :  ${fetchedPosts.data?.documents?.get(2)?.trailer_url}")
             //_animeList.value = listOf(fetchedPosts)
-            animeList = MutableLiveData(fetchedPosts.data.documents)
+            animeList = MutableLiveData(fetchedPosts.data?.documents)
             //_isLoading.value = false
         }
     }
