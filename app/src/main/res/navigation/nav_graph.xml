@@ -7,6 +7,7 @@
 
     <fragment
         android:id="@+id/editorFragment"
+
         android:name="com.example.ca1.EditorFragment"
         android:label="editor_fragment"
         tools:layout="@layout/editor_fragment" >
@@ -16,10 +17,11 @@
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
+
         android:name="com.example.ca1.MainFragment"
         android:label="MainFragment" >
         <action
-            android:id="@+id/action_mainFragment_to_editorFragment2"
+            android:id="@+id/action_mainFragment_to_editorFragment"
             app:destination="@id/editorFragment" />
     </fragment>
 

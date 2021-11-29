@@ -15,15 +15,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ca1.data.Animation
 import com.example.ca1.data.AnimeResponse
 
-import com.example.ca1.databinding.MainFragmentBinding
+import com.example.ca1.databinding.FragmentMainBinding
 
 class MainFragment : Fragment(),
     AnimeListAdapter.ListItemListener {
 
     private lateinit var viewModel: MainViewModel
-    private lateinit var binding: MainFragmentBinding
+    private lateinit var binding: FragmentMainBinding
     private lateinit var adapter: AnimeListAdapter
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,7 +33,7 @@ class MainFragment : Fragment(),
             .supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
 
-        binding = MainFragmentBinding.inflate(inflater, container, false)
+        binding = FragmentMainBinding.inflate(inflater, container, false)
 
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
@@ -50,7 +49,7 @@ class MainFragment : Fragment(),
             addItemDecoration(divider)
         }
 
-        viewModel.animeList.observe(viewLifecycleOwner, Observer{
+        viewModel.anime.observe(viewLifecycleOwner, Observer{
             Log.i("note Logging", it.toString())
 
             adapter = AnimeListAdapter(it, this@MainFragment)

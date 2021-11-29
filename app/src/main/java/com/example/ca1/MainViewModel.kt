@@ -22,10 +22,13 @@ class MainViewModel : ViewModel() {
 //
 
 
-
-    //private val _animeList: MutableLiveData<List<AnimeResponse>> = MutableLiveData()
+    //private val animeList: MutableLiveData<List<AnimeResponse>> = MutableLiveData()
     var animeList: MutableLiveData<List<Animation>> = MutableLiveData()
 
+    val anime: LiveData<List<Animation>>
+    get() = animeList
+
+    //runs the function getPosts()
     init{
         getPosts()
     }
@@ -39,6 +42,8 @@ class MainViewModel : ViewModel() {
         viewModelScope.launch {
             //_isLoading.value = true
             val fetchedPosts = RetrofitInstance.api.getPosts()
+
+            //fetched posts is returning null
             Log.i("MainViewModel", "fetched posts   :  ${fetchedPosts.data?.documents?.get(2)?.trailer_url}")
             //_animeList.value = listOf(fetchedPosts)
             animeList = MutableLiveData(fetchedPosts.data?.documents)
