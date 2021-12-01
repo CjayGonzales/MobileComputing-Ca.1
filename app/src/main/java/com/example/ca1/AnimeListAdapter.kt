@@ -38,7 +38,7 @@ class AnimeListAdapter(private val animeList: List<Animation>,
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val anime = animeList[position]
         with(holder.binding){
-            animeText.text = anime.titles?.enTitle
+            animeText.text = anime.titles?.en
 
 
 

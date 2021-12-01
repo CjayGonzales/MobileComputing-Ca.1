@@ -6,9 +6,9 @@ import android.os.Parcelable
 data class Animation(
     val id: Int,
     val titles: Titles?,
-    val description: Descriptions?,
+    val descriptions: Descriptions?,
     val season_year: Int,
-    val episode_count: Int,
+    val episodes_count: Int,
     val episode_duration: Int,
     val trailer_url: String?,
     val cover_image: String?,
@@ -30,9 +30,9 @@ data class Animation(
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeInt(id)
         parcel.writeParcelable(titles, flags)
-        parcel.writeParcelable(description, flags)
+        parcel.writeParcelable(descriptions, flags)
         parcel.writeInt(season_year)
-        parcel.writeInt(episode_count)
+        parcel.writeInt(episodes_count)
         parcel.writeInt(episode_duration)
         parcel.writeString(trailer_url)
         parcel.writeString(cover_image)

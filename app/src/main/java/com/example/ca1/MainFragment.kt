@@ -31,6 +31,7 @@ class MainFragment : Fragment(),
 
         (activity as AppCompatActivity)
             .supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        setHasOptionsMenu(true)
 
 
         binding = FragmentMainBinding.inflate(inflater, container, false)

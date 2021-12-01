@@ -35,3 +35,4 @@
         tools:text="Name of the anime goes here" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

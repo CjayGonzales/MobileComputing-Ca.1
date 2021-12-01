@@ -3,8 +3,8 @@ package com.example.ca1.data
 import android.os.Parcel
 import android.os.Parcelable
 
-data class Titles(val enTitle: String?,
-                  val jpTitle: String?) : Parcelable {
+data class Titles(val en: String?,
+                  val jp: String?) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readString()
@@ -12,8 +12,8 @@ data class Titles(val enTitle: String?,
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(enTitle)
-        parcel.writeString(jpTitle)
+        parcel.writeString(en)
+        parcel.writeString(jp)
     }
 
     override fun describeContents(): Int {

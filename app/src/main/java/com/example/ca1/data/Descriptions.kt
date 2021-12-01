@@ -3,12 +3,12 @@ package com.example.ca1.data
 import android.os.Parcel
 import android.os.Parcelable
 
-data class Descriptions(val enDescriptions: String?) : Parcelable {
+data class Descriptions(val en: String?) : Parcelable {
     constructor(parcel: Parcel) : this(parcel.readString()) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(enDescriptions)
+        parcel.writeString(en)
     }
 
     override fun describeContents(): Int {

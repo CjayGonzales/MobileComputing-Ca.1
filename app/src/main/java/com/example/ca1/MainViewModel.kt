@@ -23,7 +23,7 @@ class MainViewModel : ViewModel() {
 
 
     //private val animeList: MutableLiveData<List<AnimeResponse>> = MutableLiveData()
-    var animeList: MutableLiveData<List<Animation>> = MutableLiveData()
+    private val  animeList: MutableLiveData<List<Animation>> = MutableLiveData()
 
     val anime: LiveData<List<Animation>>
     get() = animeList
@@ -37,7 +37,7 @@ class MainViewModel : ViewModel() {
 //    val isLoading: LiveData<Boolean>
 //    get() = _isLoading
 
-    fun getPosts(){
+    private fun getPosts(){
         //everything is now running in a coroutine block
         viewModelScope.launch {
             //_isLoading.value = true
@@ -46,7 +46,7 @@ class MainViewModel : ViewModel() {
             //fetched posts is returning null
             Log.i("MainViewModel", "fetched posts   :  ${fetchedPosts.data?.documents?.get(2)?.trailer_url}")
             //_animeList.value = listOf(fetchedPosts)
-            animeList = MutableLiveData(fetchedPosts.data?.documents)
+            animeList.value =fetchedPosts.data?.documents!!
             //_isLoading.value = false
         }
     }
