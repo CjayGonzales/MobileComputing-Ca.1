@@ -32,18 +32,31 @@
             tools:ignore="Autofill,MissingConstraints"
             tools:text="Anime title in here" />
 
-    <!--    <TextView-->
-    <!--        android:id="@+id/descriptions"-->
-    <!--        android:layout_width="150dp"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginStart="20dp"-->
-    <!--        android:layout_marginTop="68dp"-->
-    <!--        android:hint="@string/enter_anime_description"-->
-    <!--        android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
-    <!--        app:layout_constraintStart_toEndOf="@+id/titleHeading"-->
-    <!--        app:layout_constraintTop_toTopOf="parent"-->
-    <!--        tools:ignore="Autofill,MissingConstraints"-->
-    <!--        tools:text="Anime title in here" />-->
+        <TextView
+            android:id="@+id/descriptions"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="68dp"
+            android:hint="@string/enter_anime_description"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintStart_toEndOf="@+id/titleHeading"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="Autofill,MissingConstraints"
+            tools:text="Anime Description Here" />
+
+    <EditText
+        android:id="@+id/myNotes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="30dp"
+        android:hint="Enter your comments in here"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/descriptions" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
