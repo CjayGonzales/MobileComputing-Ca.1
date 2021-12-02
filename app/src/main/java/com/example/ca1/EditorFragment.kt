@@ -15,7 +15,7 @@ import com.example.ca1.databinding.EditorFragmentBinding
 
 class EditorFragment : Fragment() {
 
-    //private val args: EditorFragmentArgs by navArgs()
+    private val args: EditorFragmentArgs by navArgs()
     private lateinit var binding: EditorFragmentBinding
     private lateinit var viewModel: EditorViewModel
 
@@ -36,7 +36,7 @@ class EditorFragment : Fragment() {
         binding = EditorFragmentBinding.inflate(inflater, container, false)
 
         // args.plantId is the ID of the argument you added in the nav_graph (you added it to the editor fragment)
-//        binding.titles.text = args.anime.titles
+        binding.titles.text = args.anime.titles?.en
 //        binding.descriptions.text = args.anime.descriptions
 //        binding.seasonYear.setText(args.anime.seasonYear)
 //        binding.episodeCount.setText(args.anime.episodeCount)

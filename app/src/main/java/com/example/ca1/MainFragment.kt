@@ -62,9 +62,9 @@ class MainFragment : Fragment(),
     }
 
     override fun onItemClick(anime: Animation){
-//        Log.i(TAG, "onItemClick : Received Anime name ${anime.titles}")
-//        val action = MainFragmentDirections.actionMainFragmentToEditorFragment2(anime)
-//        findNavController().navigate(action)
+        //Log.i(TAG, "onItemClick : Received Anime name ${anime.titles}")
+        val action = MainFragmentDirections.actionMainFragmentToEditorFragment(anime)
+        findNavController().navigate(action)
     }
 
 }

@@ -46,7 +46,7 @@ class MainViewModel : ViewModel() {
             //fetched posts is returning null
             Log.i("MainViewModel", "fetched posts   :  ${fetchedPosts.data?.documents?.get(2)?.trailer_url}")
             //_animeList.value = listOf(fetchedPosts)
-            animeList.value =fetchedPosts.data?.documents!!
+            animeList.value = fetchedPosts.data?.documents!!
             //_isLoading.value = false
         }
     }
