@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ca1.data.Animation
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.ca1.data.AnimeResponse
 
 import com.example.ca1.databinding.FragmentMainBinding
@@ -35,7 +36,6 @@ class MainFragment : Fragment(),
 
 
         binding = FragmentMainBinding.inflate(inflater, container, false)
-
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
         //viewModel.getPosts()
@@ -51,11 +51,11 @@ class MainFragment : Fragment(),
         }
 
         viewModel.anime.observe(viewLifecycleOwner, Observer{
-            Log.i("note Logging", it.toString())
+            //Log.i("note Logging", it.toString())
 
-            adapter = AnimeListAdapter(it, this@MainFragment)
+            adapter = AnimeListAdapter(requireContext(),it, this@MainFragment)
             binding.recyclerView.adapter = adapter
-            binding.recyclerView.layoutManager = LinearLayoutManager(activity)
+            //binding.recyclerView.layoutManager = LinearLayoutManager(activity)
         })
 
         return binding.root

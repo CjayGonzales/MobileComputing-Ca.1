@@ -10,6 +10,7 @@ import com.example.ca1.data.FavouriteAnime
 @Database(entities = [FavouriteAnime::class], version = 2, exportSchema = false)
 abstract class AppDB: RoomDatabase() {
     // this will be instantiated and all the abstract methods in the DAO will be implemented
+
     abstract fun favouriteDao(): FavouriteDao?
 
     companion object {

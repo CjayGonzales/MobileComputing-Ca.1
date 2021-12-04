@@ -13,6 +13,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.example.ca1.data.FavouriteAnime
 import com.example.ca1.databinding.EditorFragmentBinding
 
@@ -50,7 +51,13 @@ class EditorFragment : Fragment() {
 //        binding.genres.setText(args.anime.genres)
 //        binding.score.setText(args.anime.score)
 
-        //IMPLEMENT THESE FUNCTIONS///////////////////////////////////////////////////////////////////////////
+        //glide images - will allow us to display images in our program ////////////////////////////
+
+        Glide.with(this)
+            .load(args.anime.cover_image)
+            .into(binding.animeImage)
+
+        //This will allow us to save to a local storage/////////////////////////////////////////////
         viewModel = ViewModelProvider(this).get(EditorViewModel::class.java)
         viewModel.currentFavourite.observe(viewLifecycleOwner, Observer {
             binding.myNotes.setText(it.myNotes)
@@ -58,7 +65,7 @@ class EditorFragment : Fragment() {
 
         viewModel.getFavourite(args.anime.id)
 
-        //////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////
         requireActivity().onBackPressedDispatcher.addCallback(
             viewLifecycleOwner,
             object : OnBackPressedCallback(true){
