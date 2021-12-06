@@ -3,6 +3,7 @@ package com.example.ca1.data
 import android.os.Parcel
 import android.os.Parcelable
 
+// animation data class will have to match the online API. This is why it contains the different classes within it
 data class Animation(
     val id: Int,
     val titles: Titles?,
@@ -13,6 +14,8 @@ data class Animation(
     val trailer_url: String?,
     val cover_image: String?,
     val score: Int
+
+    // makes it parcelable to pass through to the editor fragment
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),

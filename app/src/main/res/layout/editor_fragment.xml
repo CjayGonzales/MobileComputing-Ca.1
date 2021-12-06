@@ -12,11 +12,10 @@
     android:layout_height="match_parent"
     tools:context=".EditorFragment">
 
-
     <TextView
         android:id="@+id/titles"
-        android:layout_width="290dp"
-        android:layout_height="35dp"
+        android:layout_width="345dp"
+        android:layout_height="48dp"
         android:hint="@string/enter_anime_title"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toTopOf="@+id/descriptions"
@@ -24,20 +23,98 @@
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/animeImage"
+        app:layout_constraintVertical_bias="0.229"
         tools:ignore="Autofill,MissingConstraints"
         tools:text="Anime title in here" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="154dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="112dp"
+
+        android:hint="@string/enter_anime_title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/ScoreHeading"
+        app:layout_constraintTop_toBottomOf="@+id/titles"
+        tools:ignore="Autofill,MissingConstraints"
+        tools:text="score goes here" />
+
+    <TextView
+        android:id="@+id/seasonYear"
+        android:layout_width="156dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/enter_anime_title"
+        android:text="Year:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.167"
+        app:layout_constraintStart_toEndOf="@+id/SeasonYearHeading"
+        app:layout_constraintTop_toBottomOf="@+id/score"
+        tools:ignore="Autofill,MissingConstraints"
+        tools:text="season year goes here" />
+
+    <TextView
+        android:id="@+id/episodeCount"
+        android:layout_width="116dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/enter_anime_title"
+        android:text="Num of Episodes:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.134"
+        app:layout_constraintStart_toEndOf="@+id/EpisodeCountHeading"
+        app:layout_constraintTop_toBottomOf="@+id/seasonYear"
+        tools:ignore="Autofill,MissingConstraints"
+        tools:text="Episode Count here" />
+
+    <TextView
+        android:id="@+id/episodeDuration"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:hint="@string/enter_anime_title"
+        android:text="Duration:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.217"
+        app:layout_constraintStart_toEndOf="@+id/episodeDurationHeading"
+        app:layout_constraintTop_toBottomOf="@+id/episodeCount"
+        tools:ignore="Autofill,MissingConstraints"
+        tools:text="Episode duration here" />
+
+    <TextView
+        android:id="@+id/trailerUrl"
+        android:layout_width="156dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="12dp"
+        android:hint="@string/enter_anime_title"
+        android:text="Trailer:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.172"
+        app:layout_constraintStart_toEndOf="@+id/trailerUrlHeading"
+        app:layout_constraintTop_toBottomOf="@+id/episodeDuration"
+        tools:ignore="Autofill,MissingConstraints"
+        tools:text="trailer here" />
 
     <TextView
         android:id="@+id/descriptions"
         android:layout_width="348dp"
         android:layout_height="306dp"
-        android:layout_marginTop="508dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
         android:hint="@string/enter_anime_description"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/trailerUrl"
+
         tools:ignore="Autofill,MissingConstraints"
         tools:text="Anime Description Here" />
 
@@ -47,8 +124,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
+        android:layout_marginTop="20dp"
         android:hint="Enter your comments in here"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,6 +146,56 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/ScoreHeading"
+        android:layout_width="96dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:text="Score:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titles" />
+
+    <TextView
+        android:id="@+id/SeasonYearHeading"
+        android:layout_width="96dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:text="Year:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ScoreHeading" />
+
+    <TextView
+        android:id="@+id/EpisodeCountHeading"
+        android:layout_width="96dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:text="Episodes:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SeasonYearHeading" />
+
+    <TextView
+        android:id="@+id/episodeDurationHeading"
+        android:layout_width="96dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:text="Episodes:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EpisodeCountHeading" />
+
+    <TextView
+        android:id="@+id/trailerUrlHeading"
+        android:layout_width="96dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:text="Episodes:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/episodeDurationHeading" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

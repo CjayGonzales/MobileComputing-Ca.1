@@ -9,8 +9,8 @@ import com.example.ca1.data.FavouriteAnime
 
 @Database(entities = [FavouriteAnime::class], version = 2, exportSchema = false)
 abstract class AppDB: RoomDatabase() {
-    // this will be instantiated and all the abstract methods in the DAO will be implemented
 
+    // becomes instantiated and implements the abstract methods in DAO
     abstract fun favouriteDao(): FavouriteDao?
 
     companion object {
@@ -23,7 +23,7 @@ abstract class AppDB: RoomDatabase() {
                         context.applicationContext,
                         AppDB::class.java,
                         "favourites.db"
-                    )//.fallbackToDestructiveMigration()
+                    )
                         .build()
                 }
             }

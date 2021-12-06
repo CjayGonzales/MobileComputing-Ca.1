@@ -15,14 +15,19 @@ object RetrofitInstance {
         val httpClient = OkHttpClient.Builder()
         httpClient.addInterceptor(logging)
 
+        // builds
         Retrofit.Builder()
+            // base url
             .baseUrl(BASE_URL)
+            // moshi converter
             .addConverterFactory(MoshiConverterFactory.create())
             .client(httpClient.build())
+
+            //builds it
             .build()
     }
 
-    //makes the retrofit var public and passes the animeApi to the java class
+    // this makes the retrofit var public and will pass the animeAPI to the java class
     val api: animeApi by lazy{
         retrofit.create(animeApi::class.java)
     }

@@ -11,7 +11,7 @@
     <!--    If i hit ctrl + l it says "Anime Response" is not found, however in the plants example,-->
     <!--    if I hit ctrl + l it says "list_item" is not found? Could this have something to do with it not displaying?-->
 
-        <androidx.recyclerview.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -27,8 +27,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:spanCount="2"
-        tools:listitem="@layout/list_item"
-        />
+        tools:listitem="@layout/list_item" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"

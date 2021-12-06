@@ -28,7 +28,7 @@ class EditorFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         (activity as AppCompatActivity).supportActionBar?.let {
-            // 'it' is similar to 'this' in Java (there are small differences)
+            // 'it' is similar to 'this' in Java
             it.setHomeButtonEnabled(true)
             it.setDisplayShowHomeEnabled(true)
             it.setDisplayHomeAsUpEnabled(true)
@@ -39,17 +39,14 @@ class EditorFragment : Fragment() {
         // bind 'binding' to the editor fragment layout
         binding = EditorFragmentBinding.inflate(inflater, container, false)
 
-        // args.plantId is the ID of the argument you added in the nav_graph (you added it to the editor fragment)
+        // args.plantId is the ID of the argument you added in the nav_graph (you bind it to the editor fragment)
         binding.titles.text = args.anime.titles?.en
         binding.descriptions.text = args.anime.descriptions?.en
-
-// TODO add the rest of these
-//        binding.seasonYear.setText(args.anime.seasonYear)
-//        binding.episodeCount.setText(args.anime.episodeCount)
-//        binding.episodeDuration.setText(args.anime.episodeDuration)
-//        binding.trailerUrl.setText(args.anime.trailerUrl)
-//        binding.genres.setText(args.anime.genres)
-//        binding.score.setText(args.anime.score)
+        binding.seasonYear.text = args.anime.season_year.toString()
+        binding.episodeCount.text = args.anime.episodes_count.toString()
+        binding.episodeDuration.text = args.anime.episode_duration.toString()
+        binding.trailerUrl.text = args.anime.trailer_url
+        binding.score.text = args.anime.score.toString()
 
         //glide images - will allow us to display images in our program ////////////////////////////
 
@@ -70,7 +67,7 @@ class EditorFragment : Fragment() {
             viewLifecycleOwner,
             object : OnBackPressedCallback(true){
                 override fun handleOnBackPressed(){
-                    // you write the code for saveAndReturn - later this will need to save to the Database
+                    // this is needed to save to the Database
                     saveAndReturn()
                 }
             }
@@ -92,6 +89,7 @@ class EditorFragment : Fragment() {
         return true
     }
 
+    //called when the activity is created
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(EditorViewModel::class.java)

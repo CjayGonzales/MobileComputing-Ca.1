@@ -9,13 +9,14 @@ import com.example.ca1.data.FavouriteAnime
 @Dao
 interface FavouriteDao {
 
-    // this insert deals with creating by inserting and also updates by replacing them
+    // inserts when creating, replaces when updating
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertFavourite(favourite: FavouriteAnime)
 
-    // favourites is defined in FavouriteEntity as the table name
+    // favourites is defined in FavouriteAnime as the table name
     @Query("SELECT * FROM favourites WHERE id = :id")
-    // Use ? as the object may be null - i.e. now entry in the DB for that id.
+
+    // ? at the end since the object can be null
     fun getFavouriteById(id: Int): FavouriteAnime?
 
 }

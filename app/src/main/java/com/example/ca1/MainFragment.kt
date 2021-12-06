@@ -52,7 +52,6 @@ class MainFragment : Fragment(),
 
         viewModel.anime.observe(viewLifecycleOwner, Observer{
             //Log.i("note Logging", it.toString())
-
             adapter = AnimeListAdapter(requireContext(),it, this@MainFragment)
             binding.recyclerView.adapter = adapter
             //binding.recyclerView.layoutManager = LinearLayoutManager(activity)
