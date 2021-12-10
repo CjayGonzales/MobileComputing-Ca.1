@@ -29,6 +29,7 @@ class EditorViewModel (app: Application) : AndroidViewModel(app) {
                 }
             }
         }
+
     }
     fun saveFavourite(favouriteAnime: FavouriteAnime) {
         viewModelScope.launch {
