@@ -16,6 +16,7 @@ class EditorViewModel (app: Application) : AndroidViewModel(app) {
     private val database = AppDB.getInstance(app)
     val currentFavourite = MutableLiveData<FavouriteAnime>()
 
+    // this gets the favourite by id, opens up the database and stores the value in there with that ID
     fun getFavourite(favouriteId: Int) {
         Log.i(TAG_2, "Id : " + favouriteId)
         viewModelScope.launch {
@@ -31,6 +32,8 @@ class EditorViewModel (app: Application) : AndroidViewModel(app) {
         }
 
     }
+
+    // this saves the anime comment so it will stay there the next time we open it up again
     fun saveFavourite(favouriteAnime: FavouriteAnime) {
         viewModelScope.launch {
             withContext(Dispatchers.IO){

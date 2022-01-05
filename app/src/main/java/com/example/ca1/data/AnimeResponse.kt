@@ -3,7 +3,7 @@ package com.example.ca1.data
 import android.os.Parcel
 import android.os.Parcelable
 //////// this is for data being called from API //////////////
-
+// the reason it is in this structure is to follow the json of the API
 data class AnimeResponse(
         val data: Data?
 ) : Parcelable {

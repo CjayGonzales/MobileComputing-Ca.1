@@ -28,7 +28,7 @@ class EditorFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         (activity as AppCompatActivity).supportActionBar?.let {
-            // 'it' is similar to 'this' in Java
+            // 'it' is similar to 'this' in Java. Basically calling this here
             it.setHomeButtonEnabled(true)
             it.setDisplayShowHomeEnabled(true)
             it.setDisplayHomeAsUpEnabled(true)
@@ -36,10 +36,10 @@ class EditorFragment : Fragment() {
         }
         setHasOptionsMenu(true)
 
-        // bind 'binding' to the editor fragment layout
+        // binds 'binding' to the editor fragment layout
         binding = EditorFragmentBinding.inflate(inflater, container, false)
 
-        // args.plantId is the ID of the argument you added in the nav_graph (you bind it to the editor fragment)
+        // args.anime.titles? is one of the argument that was added to the nav graph (we bind it to the editor fragment)
         binding.titles.text = args.anime.titles?.en
         binding.descriptions.text = args.anime.descriptions?.en
         binding.seasonYear.text = args.anime.season_year.toString()
@@ -48,21 +48,22 @@ class EditorFragment : Fragment() {
         binding.trailerUrl.text = args.anime.trailer_url
         binding.score.text = args.anime.score.toString()
 
-        //glide images - will allow us to display images in our program ////////////////////////////
+        // glide images - allows us to display images in our program
 
         Glide.with(this)
+            // takes and loads our anime.cover_image
             .load(args.anime.cover_image)
             .into(binding.animeImage)
 
-        //This will allow us to save to a local storage/////////////////////////////////////////////
+        // This allow us to save to a local storage, which in this case will be our comments for each anime
         viewModel = ViewModelProvider(this).get(EditorViewModel::class.java)
         viewModel.currentFavourite.observe(viewLifecycleOwner, Observer {
             binding.myNotes.setText(it.myNotes)
         })
 
+        // takes the arguments of the anime id and passes it through
         viewModel.getFavourite(args.anime.id)
 
-        ////////////////////////////////////////////////////////////////////////////////////////////
         requireActivity().onBackPressedDispatcher.addCallback(
             viewLifecycleOwner,
             object : OnBackPressedCallback(true){

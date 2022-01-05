@@ -14,6 +14,8 @@ abstract class AppDB: RoomDatabase() {
     abstract fun favouriteDao(): FavouriteDao?
 
     companion object {
+
+        //create an instance of the APP db
         private var INSTANCE: AppDB? = null
 
         fun getInstance(context: Context): AppDB? {
@@ -22,11 +24,14 @@ abstract class AppDB: RoomDatabase() {
                     INSTANCE = Room.databaseBuilder(
                         context.applicationContext,
                         AppDB::class.java,
+                        //create the favourites database, which is used to store our comments
                         "favourites.db"
                     )
                         .build()
                 }
             }
+
+            //returns the instance
             return INSTANCE
         }
     }

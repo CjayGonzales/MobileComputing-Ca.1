@@ -3,6 +3,7 @@ package com.example.ca1.data
 import android.os.Parcel
 import android.os.Parcelable
 
+// there is a value of documents which contains the list of Animations. This is to mirror our API's JSON
 class Data (
     val documents: List<Animation>?
 ) : Parcelable {

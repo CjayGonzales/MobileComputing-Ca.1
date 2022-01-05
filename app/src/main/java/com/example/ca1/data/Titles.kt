@@ -3,6 +3,7 @@ package com.example.ca1.data
 import android.os.Parcel
 import android.os.Parcelable
 
+//again in this format to replicate the structure of the JSON file
 data class Titles(val en: String?,
                   val jp: String?) : Parcelable {
     constructor(parcel: Parcel) : this(

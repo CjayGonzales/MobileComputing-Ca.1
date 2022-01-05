@@ -183,7 +183,7 @@
         android:layout_height="46dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="8dp"
-        android:text="Episodes:"
+        android:text="Episode Duration:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EpisodeCountHeading" />
 
@@ -193,7 +193,7 @@
         android:layout_height="46dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="8dp"
-        android:text="Episodes:"
+        android:text="Trailer URL:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/episodeDurationHeading" />
 

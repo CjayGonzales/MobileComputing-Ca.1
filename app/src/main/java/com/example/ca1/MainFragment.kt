@@ -34,11 +34,9 @@ class MainFragment : Fragment(),
             .supportActionBar?.setDisplayHomeAsUpEnabled(false)
         setHasOptionsMenu(true)
 
-
         binding = FragmentMainBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
-        //viewModel.getPosts()
         //references the object multiple times
         with(binding.recyclerView){
             setHasFixedSize(true)
@@ -54,14 +52,13 @@ class MainFragment : Fragment(),
             //Log.i("note Logging", it.toString())
             adapter = AnimeListAdapter(requireContext(),it, this@MainFragment)
             binding.recyclerView.adapter = adapter
-            //binding.recyclerView.layoutManager = LinearLayoutManager(activity)
         })
 
         return binding.root
     }
 
+    // when the item is clicked, it is directed to a different fragment and passes through the anime
     override fun onItemClick(anime: Animation){
-        //Log.i(TAG, "onItemClick : Received Anime name ${anime.titles}")
         val action = MainFragmentDirections.actionMainFragmentToEditorFragment(anime)
         findNavController().navigate(action)
     }
